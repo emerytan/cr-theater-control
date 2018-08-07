@@ -1,0 +1,28 @@
+{
+  "name": "node_require",
+  "version": "1.1.4",
+  "description": "Try to use requirejs in node server",
+  "main": "server.js",
+  "scripts": {
+    "test": "node -c server",
+    "start": "node server"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Emery Anderson",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "colors": "^1.1.2",
+    "express": "^4.14.0",
+    "johnny-five": "^0.10.6",
+    "jquery": "^3.1.1",
+    "mongodb": "^2.2.27",
+    "node-schedule": "^1.2.5",
+    "request": "^2.81.0",
+    "requirejs": "^2.3.2",
+    "socket.io": "^1.4.8",
+    "socket.io-client": "^1.5.0"
+  }
+}

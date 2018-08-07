@@ -1,0 +1,54 @@
+<div id='lightsContainer' class="container">
+	<div id="tracksContainer" class="row">
+		<div id='trackLights' class="col-xs-8">
+			<legend>Track Lights</legend>
+			<div id='t1'></div>
+			<div id='t2'></div>
+			<div id='t3'></div>
+			<div id='t4'></div>
+		</div>
+		<div id="tlButtons" class="col-xs-4">
+			<legend id="trackLegend">Presets</legend>
+			<div id="trackLightPresets">
+				<input type="button" value="Empty" id="preset0" />
+				<input type="button" value="Empty" id="preset1" />
+				<input type="button" value="Empty" id="preset2" />
+				<input type="button" value="Empty" id="preset3" />
+				<input type="button" value="Empty" id="preset4" />
+				<br>
+				<input type="button" value="Save to Preset" id="setPresets" />
+				<br>
+			</div>
+		</div>
+		<div id="rgbLED" class="col-xs-8">
+			<legend>Floor Lights</legend>
+			<div id='red'></div>
+			<div id='green'></div>
+			<div id='blue'></div>
+		</div>
+		
+	</div>
+
+	<div id="myModal" class="modal fade container" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Preset Manager</h4>
+				</div>
+				<div class="modal-body" class="row">
+					<div class="form">
+						<form id="trackInput" class="col-xs-6">
+							<input type="text" class="form-control" id="getPreset" placeholder="Enter Name for Preset">
+						</form>
+						<div id="lightsDropdown" style="margin-left: 15px;"></div>
+					</div>
+					<p id="updateInfo"></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="saveChanges">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

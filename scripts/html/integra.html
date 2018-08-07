@@ -1,0 +1,35 @@
+<div id="integraContainer" class="container">
+    <h4>Sound Settings</h4>
+    <div class="row">
+        <div id="sound1" class="col-xs-6">
+            <legend>Input Selection</legend>
+            <div id="inputSelection">
+                <input type="button" value="HDMI" id="hdmi" />
+                <input type="button" value="Stereo Analog" id="analog" />
+                <input type="button" value="Multi Channel" id="multiCH" />
+            </div>
+            <div id="refSettings" style="margin-top: 40px; white-space: normal;">
+                <legend>Volume Reference Settings (WIP)</legend>
+                <input type="button" value="Set REF" id="setRef" />
+                <input type="button" value="Restore REF" id="restoreRef" />
+                <div>
+                    <p id="currentRef" style="margin-top: 20px; color: cyan;"></p>
+                </div>
+            </div>
+            
+        </div>
+        <div id="sound2" class="col-xs-6">
+            <legend>Info</legend>
+            <div id="info">
+                <h5>HDMI</h5>
+                <p>Use this for Playstation (BluRay) screenings</p>
+                <br/>
+                <h5>Stereo Analog</h5>
+                <p>MacMini's headphone output by default. Take the headphone cable out of the Mac Mini and plug it into (phone, iPad, etc...)</p>
+                <br/>
+                <h5>Multi Channel</h5>
+                <p>Use this for DCP playback, HD-SDI, and AppleTV</p>
+            </div>
+        </div>
+    </div>
+</div>

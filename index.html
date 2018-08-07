@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=.97">
+	<title>Cinereach Theater</title>
+	<link rel="stylesheet" type="text/css" href="./scripts/lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="./public/css/jqx.base.css" type="text/css" />
+	<link rel="stylesheet" href="./public/css/jqx.dark.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="./public/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/custom.css">
+	<script type="text/javascript" data-main="./scripts/common" src="./scripts/lib/require.js"></script>
+</head>
+
+<body class="container">
+	<header>
+		<h3 id="headerText"></h3>
+	</header>
+	<nav>
+		<div class="row container" id="deviceStatus">
+			<div id="projectorSwitches" class="col-xs-3" id="projectorMain">
+				<legend>Projector Power</legend>
+				<div id="powerSwitch">
+					<input type="button" value="Projector Power" id='power' />
+				</div>
+				<br>
+				<p id="messages"></p>
+				<div id="barcoInfo">
+					<p id="barcoText"></p>
+				</div>
+			</div>
+			<div id="lmpshtSwitches" class="col-xs-3">
+				<legend>Lamp & Shutter</legend>
+				<div id="lampSwitch">
+					<input type="button" value="Lamp Power" id='lamp' />
+				</div>
+				<br>
+				<div id="shutterSwitch">
+					<input type="button" value="Shutter" id='shutter' />
+				</div>
+			</div>
+			<div id="deviceIO" class="col-xs-3">
+				<legend>Device Params</legend>
+				<div id="deviceParams">
+					<p id="projectorMacro"></p>
+					<p id="hdmiSource"></p>
+					<p id="inputSetting"></p>
+					<p id="listenMode"></p>
+					<p id="tempMeter"></p>
+					<p id="integraPower"></p>
+					<p id="exhaustStatus"></p>
+				</div>
+			</div>
+			<div id="lightSwitches" class="col-xs-3" id="lightsPowerSwithes">
+				<legend>Light Switches</legend>
+				<div id="floorLightSwitch">
+					<input type="button" value="Floor Lights" id='rgbPower' />
+				</div>
+				<div id="ceilingLightSwitch">
+					<input type="button" value="Ceiling Lights" id='tracksPower' />
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div id="main" class="row container">
+		<div id="c1" class="col-xs-3">
+			<legend>Modules</legend>
+			<div id="deviceModules">
+				<button id="dm0" data-id="lightsModule" value="Lights"></button>
+				<button id="dm1" data-id="integraModule" value="Sound"></button>
+				<button id="dm2" data-id="projectorModule" value="Projector"></button>
+				<button id="dm3" data-id="maskingModule" value="Masking"></button>
+				<button id="dm4" data-id="quickSetups" value="Quick Setups"></button>
+				<button id="dm5" data-id="lightsModule" value="WIP"></button>
+			</div>
+			<div id="onlineStatus">
+				<legend>Devices</legend>
+				<p id="projector" style="color: gray;"></p>
+				<p id="integra" style="color: gray;"></p>
+				<p id="arduino" style="color: gray;"></p>
+				<p id="jnior" style="color: gray;"></p>
+				<p id="kramer" style="color: gray;"></p>
+				<p id="testPara3"></p>
+				<p id="testPara4"></p>
+				<p id="testPara5"></p>
+			</div>
+			<div id="testButtons">
+				<input type="button" value="test 1" id="test1" />
+				<input type="button" value="test 2" id="test2" />
+			</div>
+		</div>
+		<div id="c2" class="col-xs-7">
+			<div id="deviceContainer"></div>
+		</div>
+		<div id="c3" class="col-xs-2">
+			<div id="volumeContainer">
+				<legend id="volReturned"></legend>
+				<div id="masterVolume"></div>
+				<div id="muteRefButtons" style="margin-top: 25px;">
+					<input type="button" value="Mute" id="audioMute" />
+					<input type="button" value="REF" id="audioRef" />
+				</div>
+				<p id="masterRef"></p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<div id="modalTest" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"></button>
+            <h4>Log</h4>
+        </div>
+        <div class="modal-body">
+            <div id="log">
+                <p></p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+<div id="lightsModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"></button>
+            <h4>Lights</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="lightsContainer">
+                        <div id="rgbLED">
+                            <legend>RGB LED's</legend>
+                            <div id="red"></div>
+                            <div id="green"></div>
+                            <div id="blue"></div>
+                        </div>
+                        <div id="trackLights">
+                            <legend>Track Lights</legend>
+                            <div id="t1"></div>
+                            <div id="t2"></div>
+                            <div id="t3"></div>
+                            <div id="t4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+
+
+
+<!--require(['jquery', 'order!bsModal'], function ($) { $('#modalTest').modal('toggle'); }); break; default: console.log('default in deviceTabs'); break;-->
+

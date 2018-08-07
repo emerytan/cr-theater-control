@@ -1,0 +1,7 @@
+data
+node_modules
+refScripts
+testStuff.js
+.DS_Store
+*~
+

@@ -1,0 +1,386 @@
+html {
+	background-color: #222;
+	width: auto;
+	height: 768px
+}
+
+body {
+	font: 12px "Lucinda Console", Monaco, monospace;
+	color: #bbb;
+	border: solid 2px rgb(16, 96, 96);
+	border-radius: 10px;
+	background-color: #0a0a0a;
+	position: relative;
+	height: 100%;
+	width: auto;
+}
+
+header {
+	text-align: center;
+	position: relative;
+	height: 5%;
+	width: auto
+}
+
+h3 {
+	margin: 10px auto
+}
+
+nav {
+	border-bottom: 1px solid rgb(64, 128, 128);
+	border-radius: 10px;
+	position: relative;
+	height: 23%;
+	padding-bottom: 10px;
+	padding-top: 10px
+}
+
+legend {
+	display: block;
+	width: 100%;
+	margin-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 1.1em;
+	line-height: inherit;
+	color: #ccc;
+	text-align: center;
+}
+
+p {
+	margin-bottom: 1px;
+	text-align: left;
+	color: darkgray
+}
+
+#main {
+	padding-top: 4px;
+	position: relative;
+	width: auto;
+	height: 70%;
+}
+
+#c1 {
+	border-right: solid 1px rgb(16, 96, 96);
+	text-align: left;
+	padding-bottom: 10px;
+	padding-top: 20px;
+	position: relative;
+	height: 100%;
+	float: left
+}
+
+#c2 {
+	text-align: center;
+	position: relative;
+	height: 100%;
+	padding: 5px 0;
+}
+
+#c3 {
+	border-left: solid 1px rgb(16, 96, 96);
+	position: relative;
+	height: 100%;
+	float: right
+}
+
+#deviceContainer {
+	position: relative;
+	width: auto;
+	height: 100%;
+	overflow-y: auto
+}
+
+#lightsContainer,
+#projectorContainer,
+#integraContainer {
+	position: relative;
+	width: auto;
+}
+
+#projectorPresets,
+#projectorControls {
+	margin-top: 10px
+}
+
+#macro1,
+#macro2,
+#macro3,
+#macro4,
+#macro5,
+#macro6 {
+	height: 38px;
+	text-align: left;
+	text-indent: 10px;
+	line-height: 38px
+}
+
+#qs1,
+#qs2,
+#qs3,
+#qs4,
+#qs5,
+#qs6,
+#dm0,
+#dm1,
+#dm2,
+#dm3,
+#dm4,
+#dm5 {
+	font: 12px "Lucinda Console", Monaco, monospace;
+	height: 30px;
+	margin: 4px 0;
+	text-align: left;
+	text-indent: 10px;
+	line-height: 30px
+}
+
+#red,
+#green,
+#blue,
+#t1,
+#t2,
+#t3,
+#t4 {
+	position: relative;
+	float: left;
+	clear: left;
+	margin: 15px 5px;
+	width: 90%;
+	height: 25px
+}
+
+.jqx-switchbutton-label-on {
+	background: green;
+	color: #ddd
+	/*    height: 20px*/
+}
+
+.jqx-switchbutton-label-off {
+	background: #202020;
+	color: #bbb;
+	/*    height: 20px*/
+}
+
+.jqx-switchbutton-thumb {
+	background-color: #ddd
+}
+
+.jqx-button {
+	/* font-family: inherit; */
+	margin: 2px;
+	font: 12px "Lucinda Console", Monaco, monospace
+}
+
+.settings-section {
+	padding-left: 10px;
+	height: 33px
+}
+
+.settings-label {
+	font-size: 1.2em;
+	float: left;
+	position: relative;
+	top: 20%;
+	color: #bbb
+}
+
+.settings-setter {
+	float: right;
+	/*  padding: px;*/
+	/*  position: relative;*/
+	/*  background: #222;*/
+	/*  height: 34px*/
+}
+
+.lightsControl {
+	/*  position: absolute;*/
+	/*  right: 10px;*/
+	margin-top: 10%
+}
+
+#masterVolume {
+	height: 250px;
+	width: 40px;
+	position: relative;
+	margin-left: 35%;
+	margin-top: 15%;
+	margin-bottom: 18px
+}
+
+#masterVolume .ui-slider-range {
+	background: blue
+}
+
+#masterVolume .ui-slider-handle {
+	position: absolute;
+	width: 115%;
+	height: 13%;
+	background-color: #b90;
+	margin-left: 0px
+}
+
+#red .ui-slider-range {
+	background: #ef2929
+}
+
+#red .ui-slider-handle {
+	border-color: #b2b2b2;
+	height: 34px;
+	width: 20px;
+	background: rgb(16, 96, 96);
+}
+
+#green .ui-slider-range {
+	background: #8ae234
+}
+
+#green .ui-slider-handle {
+	border-color: #8ae234;
+	height: 34px;
+	width: 20px;
+	background: rgb(16, 96, 96);
+}
+
+#blue .ui-slider-range {
+	background: #729fcf
+}
+
+#blue .ui-slider-handle {
+	border-color: #729fcf;
+	height: 34px;
+	width: 20px;
+	background: rgb(96, 96, 96);
+}
+
+#setPresets {
+	margin-top: 50px;
+	color: cyan;
+	text-align: left;
+	text-indent: 10px;
+	font-size: .8em
+}
+
+#trackLights .ui-slider-handle {
+	border-color: #729fcf;
+	height: 34px;
+	top: -.4em;
+	width: 20px;
+}
+
+#maskingContainer {
+	position: relative;
+	height: 100%;
+	width: 95%;
+}
+
+#maskingButtons {
+	position: relative;
+	width: auto;
+	height: auto;
+	margin-bottom: 15px
+}
+
+#barcoText {
+	margin-top: 5px;
+	color: yellow;
+	padding-left: 5px
+}
+
+#shiftLeft {
+	float: left;
+	margin-top: 30px;
+	margin-left: 10px
+}
+
+#shiftRight {
+	float: right;
+	margin-top: 30px;
+	margin-right: 10px
+}
+
+#shiftUp {
+	margin-bottom: 20px
+}
+
+#shiftButtons {
+	margin-top: 20px
+}
+
+#qsContainer {
+	position: relative;
+	width: 98%
+}
+
+#quickSetups,
+#qsDescription {
+	margin-top: 20px
+}
+
+#transports {
+	margin-top: 10%;
+	position: relative
+}
+
+#daviceStatus {
+	margin-top: 20px;
+}
+
+#projectorSwitches {
+	position: relative;
+	height: 100%
+}
+
+#ceilingLightSwitch {
+	margin-top: 20px
+}
+
+#lightSwitches {
+	position: relative
+}
+
+#lampSwitch {
+	margin: 5px 0
+}
+
+#preset0,
+#preset1,
+#preset2,
+#preset3,
+#preset4 {
+	font: 12px "Lucinda Console", Monaco, monospace;
+	margin: 4px 0;
+	height: 40px;
+	text-align: left;
+	text-indent: 10px;
+	font-size: .9em
+	/*line-height: 35px*/
+}
+
+#trackSliders {
+	position: relative;
+	height: 60%;
+	width: auto
+}
+
+#rgbSliders {
+	position: relative;
+	height: 40%;
+	width: auto
+}
+
+#tlButtons {
+	float: right
+}
+
+#rgbLED {
+	float: left
+}
+
+.jqx-fill-state-pressed-dark {
+	border-color: #eee;
+	color: #fff;
+	background-color: rgb(0, 156, 0);
+}

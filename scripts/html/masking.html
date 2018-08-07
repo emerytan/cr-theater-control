@@ -1,0 +1,50 @@
+<div id="maskingContainer">
+    <h4 style="color: blue;">Masking Settings</h4>
+    <div id="maskingButtons" class="row container">
+        <div id="Masking1" class="col-xs-6">
+            <legend>Side Masking</legend>
+            <div id="sideMasking">
+                <input type="button" value="Open Sides" id="openSide"/>
+                <input type="button" value="Close Sides" id="closeSide"/>
+            </div>
+        </div>
+        <div id="Masking2" class="col-xs-6">
+            <legend>Bottom Masking</legend>
+            <div id="bottomMasking">
+                <input type="button" value="Raise Bottom" id="raise"/>
+                <input type="button" value="Lower Bottom" id="lower"/>
+            </div>
+        </div>
+
+    </div>
+    <div id="lensControls" class="col-xs-12">
+        <h4 style="color: blue;">Lens Adjustment</h4>
+        <div id="focus" class="col-xs-6">
+            <legend>Focus</legend>
+            <div id="focusButtons">
+                <input type="button" value="Focus Out" id="focusOut" data-action="focus" data-command="1"/>
+                <input type="button" value="Focus In" id="focusIn" data-action="focus" data-command="0"/>
+            </div>
+        </div>
+        <div id="zoom" class="col-xs-6">
+            <legend>Zoom</legend>
+            <div id="zoomButtons">
+                <input type="button" value="Zoom Out" id="zoomOut" data-action="zoom" data-command="1"/>
+                <input type="button" value="Zoom In" id="zoomIn" data-action="zoom" data-command="0"/>
+            </div>
+        </div>
+        <div id="shift" class="col-xs-12">
+            <legend style="margin-top: 10px;">Shift</legend>
+            <div id="shiftButtons">
+                <input type="button" value="Shift Left" id="shiftLeft" data-action="shift" data-command="0"/>
+                <input type="button" value="Shift Right" id="shiftRight" data-action="shift" data-command="1"/>
+                <div>
+                    <input type="button" value="Shift Up" id="shiftUp" data-action="shift" data-command="2"/>
+                </div>
+                <div>
+                    <input type="button" value="Shift Down" id="shiftDown" data-action="shift" data-command="3"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

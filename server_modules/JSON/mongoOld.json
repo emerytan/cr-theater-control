@@ -1,0 +1,53 @@
+{
+    "ref" : "trackPresets",
+    "preset0" : {
+        "name" : "one",
+        "values" : [ 
+            10, 
+            20, 
+            20, 
+            30
+        ],
+        "index": 0
+    },
+    "preset1" : {
+        "name" : "two",
+        "values" : [ 
+            15, 
+            20, 
+            20, 
+            25
+        ],
+        "index": 1
+    },
+    "preset2" : {
+        "name" : "three",
+        "values" : [ 
+            20, 
+            25, 
+            25, 
+            30
+        ],
+        "index": 2
+    },
+    "preset3" : {
+        "name" : "four",
+        "values" : [ 
+            25, 
+            30, 
+            30, 
+            35
+        ],
+        "index": 3
+    },
+    "preset4" : {
+        "name" : "five",
+        "values" : [ 
+            30, 
+            35, 
+            35, 
+            40
+        ],
+        "index": 4
+    }
+}
