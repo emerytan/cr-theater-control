@@ -11,7 +11,7 @@ const colors = require('colors'),
 
 
 var thisID = 'projector';
-devices.createDevice(thisID, 'Barco', '192.168.66.10', 43728);
+devices.createDevice(thisID, 'Barco', '192.168.100.2', 43728);
 
 var thisDevice = device[thisID];
 thisDevice.id = '#projector';
@@ -20,10 +20,6 @@ var barcoStates = {
 	macros: [],
 	macroID: []
 };
-
-function logMe(a) {
-	console.log('barco: '.cyan + a)
-}
 
 
 module.exports = (io) => {
@@ -47,7 +43,7 @@ module.exports = (io) => {
 
 
 	projector.on('error', function () {
-		console.log('projector: '.cyan + 'connection error.'.red);
+		console.log('projector: ' + 'connection error.');
 		thisDevice.online = false;
 		thisDevice.event = 'error';
 		io.sockets.emit('devices', thisDevice);
@@ -72,7 +68,7 @@ module.exports = (io) => {
 
 
 		if (data.equals(commandSuccess) === true) {
-			console.log('projector: '.cyan + 'succesful command: ' + barcoStates.lastCommand);
+			console.log('projector: ' + 'succesful command: ' + barcoStates.lastCommand);
 			if (barcoStates.lastCommand == 'power' || barcoStates.lastCommand == 'lamp' || barcoStates.lastCommand == 'shutter') {
 				switch (barcoStates.lastCommand) {
 					case 'power':
@@ -101,21 +97,21 @@ module.exports = (io) => {
 		switch (data[x]) {
 			case 0x76: /// lamp
 				if (data[z] == 0) {
-					console.log('projector: '.cyan + 'lamp is off');
+					console.log('projector: ' + 'lamp is off');
 					io.sockets.emit('barco', {
 						setting: 'lamp',
 						state: false
 					});
 					barcoStates.lamp = false;
 				} else if (data[z] == 1) {
-					console.log('projector: '.cyan + 'lamp is on');
+					console.log('projector: ' + 'lamp is on');
 					io.sockets.emit('barco', {
 						setting: 'lamp',
 						state: true
 					});
 					barcoStates.lamp = true;
 				} else if (data[z] === 0x10) {
-					console.log('projector: '.cyan + 'lamp is sleeping');
+					console.log('projector: ' + 'lamp is sleeping');
 					io.sockets.emit('barco', {
 						setting: 'lamp',
 						state: false
@@ -127,7 +123,6 @@ module.exports = (io) => {
 				};
 
 				setTimeout(function () {
-					logMe(`lamp pubsub sent to JNIOR`);
 					nodeMain.pubsub.emit('barco lamp', barcoStates.lamp);
 				}, 1000)
 
@@ -136,7 +131,7 @@ module.exports = (io) => {
 
 			case 0x67: // power
 				if (data[y] == 0) {
-					console.log('projector: '.cyan + 'power is off');
+					console.log('projector: ' + 'power is off');
 					io.sockets.emit('barco', {
 						setting: 'power',
 						state: false
@@ -144,7 +139,7 @@ module.exports = (io) => {
 					barcoStates.power = false;
 					nodeMain.pubsub.emit('barco power', barcoStates.power);
 				} else if (data[y] == 1) {
-					console.log('projector: '.cyan + 'power is on');
+					console.log('projector: ' + 'power is on');
 					io.sockets.emit('barco', {
 						setting: 'power',
 						state: true
@@ -157,21 +152,21 @@ module.exports = (io) => {
 				break;
 			case 0x21:
 				if (data[z] == 0) {
-					console.log('projector: '.cyan + 'dowser is closed');
+					console.log('projector: ' + 'dowser is closed');
 					io.sockets.emit('barco', {
 						setting: 'shutter',
 						state: false
 					});
 					barcoStates.shutter = false;
 				} else if (data[z] == 1) {
-					console.log('projector: '.cyan + 'dowser is open')
+					console.log('projector: ' + 'dowser is open')
 					io.sockets.emit('barco', {
 						setting: 'shutter',
 						state: true
 					});
 					barcoStates.shutter = true;
 				} else if (data[z] == 2) {
-					console.log('projector: '.cyan + 'dowser in sleep');
+					console.log('projector: ' + 'dowser in sleep');
 					io.sockets.emit('barco', {
 						setting: 'shutter',
 						state: false
@@ -193,7 +188,6 @@ module.exports = (io) => {
 					io.sockets.emit('barcoStates', barcoStates);
 				} else if (data[y] === 5) {
 					console.log('barco: macro '.green + j + ' is '.green + macRet);
-//					console.log(data);
 					barcoStates.macros[j] = macRet;
 					var idNum = j + 1;
 					var macroID = '#macro' + idNum;
@@ -206,7 +200,7 @@ module.exports = (io) => {
 				break;
 			default:
 				if (data.equals(ACK) === true && barcoStates.lastCommand === 'macro') {
-					console.log('projector: '.cyan + 'ACK -- run check macro');
+					console.log('projector: ' + 'ACK -- run check macro');
 					barcoStates.lastCommand = 'get macro';
 					setTimeout(function () {
 						projector.write(Buffer.from(CMD.CMD.lastMac));
@@ -221,7 +215,7 @@ module.exports = (io) => {
 	});
 
 	io.sockets.on('connection', function (socket) {
-		console.log('projector: '.cyan + 'got a new connection');
+		console.log('projector: ' + 'got a new connection');
 		// console.log(thisDevice);
 		io.emit('devices', thisDevice);
 		socket.emit('barco', {
@@ -234,12 +228,12 @@ module.exports = (io) => {
 		});
 
 		socket.on('read barco macros', function () {
-			console.log('projector: '.cyan + 'got read barco macros socket');
+			console.log('projector: ' + 'got read barco macros socket');
 			io.emit('barcoMacros', barcoStates);
 		});
 
 		socket.on('barco command', function (val) {
-			console.log('socket: barco command --- '.blue + ' }---> ' + val.setting + ' <---{ ' + val.state);
+			console.log('socket: barco command --- ' + ' }---> ' + val.setting + ' <---{ ' + val.state);
 
 			if (val.setting == 'power' || val.setting == 'lamp' || val.setting == 'shutter') {
 				switch (val.setting) {
@@ -324,9 +318,9 @@ module.exports = (io) => {
 //			console.log(barcoStates.macros);
 			var setMacro = barcoStates.macros[index];
 			barcoStates.lastCommand = 'macro';
-			logMe(`setMacro ${setMacro}`);
+			(`setMacro ${setMacro}`);
 			CMD.writeMacro(projector, setMacro);
-			console.log('projector: writing macro '.cyan + setMacro);
+			console.log('projector: writing macro ' + setMacro);
 		});
 
 	});

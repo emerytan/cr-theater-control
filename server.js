@@ -26,8 +26,8 @@ app.use(express.static(__dirname + '/'));
 app.use(express.static('./scripts/lib/bootstrap'));
 
 server.listen(3000, function () {
-    console.log('\n\n' + 'CR Device Control APP!!'.yellow + '\n');
-    console.log('server listening on port '.cyan + app.get('port') + '\n----:: ::----');
+    console.log('CR Device Control APP!!');
+    console.log('server listening on port ' + app.get('port'));
     
     storage.connect()
     .then((state) => {
@@ -49,7 +49,7 @@ deviceOnline.on('rgbPower', function (data) {
 io.sockets.on('connection', function (socket) {
 
     connections.push(socket);
-    console.log('server: '.green + ' new connection!!! ' + connections.length + ' clients');
+    console.log('server: new connection!!! ' + connections.length + ' clients');
 
     io.emit('client count', connections.length);
 
@@ -74,17 +74,17 @@ io.sockets.on('connection', function (socket) {
     });
 
     socket.on('qSet', function (val) {
-        console.log('socket:'.cyan + ' : quicksetups ' + val.macroName + " : " + val.buttonNumber);
+        console.log('socket: quicksetups ' + val.macroName + " : " + val.buttonNumber);
 //        states.radio = val.macroName;
         socket.broadcast.emit('qSet', val);
     });
 
 });
 
-//
+
 projector(io);
-integra(io);
-arduino(io);
-vera(io);
-kramer(io);
+// integra(io);
+// arduino(io);
+// vera(io);
+// kramer(io);
 
